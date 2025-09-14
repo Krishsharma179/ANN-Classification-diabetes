@@ -1,5 +1,5 @@
 from tensorflow.keras.models import load_model
-import dill
+import pickle
 import pandas as pd
 import numpy as np
 import streamlit as st
@@ -7,7 +7,7 @@ import streamlit as st
 model=load_model('model.h5')
 
 with open('preprocessor.pkl','rb') as file:
-    preprocessor=dill.load(file)
+    preprocessor=pickle.load(file)
 
 st.title('diabetes_prediction')
 
